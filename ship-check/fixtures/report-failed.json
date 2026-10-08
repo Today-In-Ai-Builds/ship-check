@@ -17,13 +17,12 @@
   },
   "environment": {
    "ci": false,
-   "trustNoticeShown": false,
-   "os": "win32 10.0.26200",
-   "arch": "x64",
-   "runtime": "node v26.7.0"
+   "os": "redacted",
+   "arch": "redacted",
+   "runtime": "redacted"
   },
   "vcs": {
-   "commit": "69be059a4fee369f94ea09744b579e7f04f288dc",
+   "commit": "redacted",
    "branch": "add-discount-codes",
    "dirty": false
   },
