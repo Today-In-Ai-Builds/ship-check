@@ -1,0 +1,409 @@
+{
+ "schemaVersion": "report-1",
+ "run": {
+  "id": "01a11cc5-23cc-7ba0-a39a-74ec7056808a",
+  "specVersion": "0.1",
+  "runner": {
+   "name": "e2e",
+   "version": "0.18.0"
+  },
+  "status": "failed",
+  "exitCode": 1,
+  "startedAt": "2026-10-08T18:27:24.548Z",
+  "finishedAt": "2026-10-08T18:27:30.684Z",
+  "project": {
+   "id": "ship-check",
+   "configDigest": "2ea52202366caec1ace8b4af86ca335b28ca181bc8dadbc9875e982855af1606"
+  },
+  "environment": {
+   "ci": false,
+   "trustNoticeShown": false,
+   "os": "win32 10.0.26200",
+   "arch": "x64",
+   "runtime": "node v26.7.0"
+  },
+  "vcs": {
+   "commit": "69be059a4fee369f94ea09744b579e7f04f288dc",
+   "branch": "add-discount-codes",
+   "dirty": false
+  },
+  "targets": [
+   {
+    "id": "web",
+    "index": 0,
+    "platform": "web",
+    "baseOrigin": "http://127.0.0.1:4321",
+    "environment": "test",
+    "engine": {
+     "name": "web",
+     "version": "0.13.0",
+     "spiVersion": 1
+    },
+    "capabilities": [
+     "actions",
+     "artifacts",
+     "browser",
+     "keyboard",
+     "location",
+     "observation",
+     "pointer",
+     "state"
+    ],
+    "artifactCapabilities": [
+     "screenshot",
+     "trace",
+     "video"
+    ],
+    "stateCapability": true
+   }
+  ],
+  "serialGroups": [],
+  "results": [
+   {
+    "id": "baf0728f8694909532480cfc8d2c1f200d82458130ba9484840b9eabd805a708",
+    "testId": "tests/cart.e2e.ts::adding%20two%20items%20adds%20up%20the%20total",
+    "kind": "test",
+    "declarationIndex": 0,
+    "titlePath": [
+     "adding two items adds up the total"
+    ],
+    "file": "tests/cart.e2e.ts",
+    "source": {
+     "file": "tests/cart.e2e.ts",
+     "line": 4,
+     "column": 1
+    },
+    "targetId": "web",
+    "platform": "web",
+    "agent": "default",
+    "repeat": 0,
+    "tags": [],
+    "selected": true,
+    "status": "failed",
+    "attempts": [
+     {
+      "id": "01a11cc5-2719-7b1f-95a4-7f5924cf0052",
+      "index": 0,
+      "status": "failed",
+      "startedAt": "2026-10-08T18:27:25.082Z",
+      "durationMs": 5546,
+      "artifacts": [
+       {
+        "id": "01a11cc5-2719-7b1f-95a4-7f5924cf0052:artifact:0",
+        "kind": "log",
+        "mediaType": "text/plain",
+        "redaction": "complete",
+        "producer": {
+         "kind": "attempt"
+        },
+        "path": "web/tests_cart.e2e.ts__adding_20two_20items_20adds_20up_20the_20total-84b689ec/default/attempt-0/failure/screen.txt",
+        "size": 761,
+        "sha256": "fbc694eeb91bab7d1d3a2f5fd5b94e8dd9eb6390843f03c0220ed7b054870cd2"
+       },
+       {
+        "id": "01a11cc5-2719-7b1f-95a4-7f5924cf0052:artifact:1",
+        "kind": "screenshot",
+        "mediaType": "image/png",
+        "redaction": "complete",
+        "producer": {
+         "kind": "attempt"
+        },
+        "path": "web/tests_cart.e2e.ts__adding_20two_20items_20adds_20up_20the_20total-84b689ec/default/attempt-0/screenshots/001-failure.png",
+        "size": 21477,
+        "sha256": "eb602451d4147cb4240eab1abfa3ac1841492f21e440741ef1fe448231a78396"
+       },
+       {
+        "id": "01a11cc5-2719-7b1f-95a4-7f5924cf0052:artifact:2",
+        "kind": "trace",
+        "mediaType": "application/zip",
+        "redaction": "not-required",
+        "producer": {
+         "kind": "attempt"
+        },
+        "path": "web/tests_cart.e2e.ts__adding_20two_20items_20adds_20up_20the_20total-84b689ec/default/attempt-0/trace/trace.zip",
+        "size": 173979,
+        "sha256": "bb4406867657d7de52e51dea4963142867420306a46c1908dfea332eae35a3a1"
+       }
+      ],
+      "error": {
+       "category": "test",
+       "code": "ASSERTION_FAILED",
+       "message": "expect.toHaveText failed\nlocator: getByRole(\"status\", name: \"Total\")\nexpected: text \"$25.00\"\nobserved: text \"$1,015.00\" (match count 1)",
+       "retryable": false,
+       "phase": "body",
+       "details": {
+        "locator": "getByRole(\"status\", name: \"Total\")",
+        "expected": "text \"$25.00\"",
+        "observed": "text \"$1,015.00\"",
+        "matches": 1
+       },
+       "source": {
+        "file": "node_modules/e2e/dist/internal/errors.js",
+        "line": 231,
+        "column": 24
+       }
+      },
+      "secondaryErrors": [],
+      "cleanup": "complete",
+      "failure": {
+       "url": "http://127.0.0.1:4321/",
+       "screen": "01a11cc5-2719-7b1f-95a4-7f5924cf0052:artifact:0",
+       "screenshot": "01a11cc5-2719-7b1f-95a4-7f5924cf0052:artifact:1"
+      },
+      "steps": [
+       {
+        "id": "01a11cc5-2719-7b1f-95a4-7f5924cf0052:0",
+        "index": 0,
+        "kind": "app",
+        "api": "app.open",
+        "label": "/",
+        "status": "passed",
+        "startedAt": "2026-10-08T18:27:25.208Z",
+        "durationMs": 124,
+        "events": [],
+        "artifacts": [],
+        "source": {
+         "file": "node_modules/e2e/dist/run/steps.js",
+         "line": 26,
+         "column": 16
+        }
+       },
+       {
+        "id": "01a11cc5-2719-7b1f-95a4-7f5924cf0052:1",
+        "index": 1,
+        "kind": "locator",
+        "api": "locator.tap",
+        "label": "getByRole(\"button\", name: \"Add Mug to cart\")",
+        "status": "passed",
+        "startedAt": "2026-10-08T18:27:25.334Z",
+        "durationMs": 93,
+        "events": [],
+        "artifacts": [],
+        "source": {
+         "file": "node_modules/e2e/dist/run/steps.js",
+         "line": 26,
+         "column": 16
+        }
+       },
+       {
+        "id": "01a11cc5-2719-7b1f-95a4-7f5924cf0052:2",
+        "index": 2,
+        "kind": "locator",
+        "api": "locator.tap",
+        "label": "getByRole(\"button\", name: \"Add T-shirt to cart\")",
+        "status": "passed",
+        "startedAt": "2026-10-08T18:27:25.427Z",
+        "durationMs": 46,
+        "events": [],
+        "artifacts": [],
+        "source": {
+         "file": "node_modules/e2e/dist/run/steps.js",
+         "line": 26,
+         "column": 16
+        }
+       },
+       {
+        "id": "01a11cc5-2719-7b1f-95a4-7f5924cf0052:3",
+        "index": 3,
+        "kind": "assertion",
+        "api": "expect.toHaveText",
+        "label": "getByRole(\"status\", name: \"Total\")",
+        "status": "failed",
+        "startedAt": "2026-10-08T18:27:25.475Z",
+        "durationMs": 5080,
+        "events": [],
+        "artifacts": [],
+        "source": {
+         "file": "node_modules/e2e/dist/run/steps.js",
+         "line": 26,
+         "column": 16
+        },
+        "error": {
+         "category": "test",
+         "code": "ASSERTION_FAILED",
+         "message": "expect.toHaveText failed\nlocator: getByRole(\"status\", name: \"Total\")\nexpected: text \"$25.00\"\nobserved: text \"$1,015.00\" (match count 1)",
+         "retryable": false,
+         "details": {
+          "locator": "getByRole(\"status\", name: \"Total\")",
+          "expected": "text \"$25.00\"",
+          "observed": "text \"$1,015.00\"",
+          "matches": 1
+         },
+         "source": {
+          "file": "node_modules/e2e/dist/internal/errors.js",
+          "line": 231,
+          "column": 24
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "f3ff3c144df601c5a9ae2ab1bc830cbad7f306897af458a483ec82ea7571fbe2",
+    "testId": "tests/discount.e2e.ts::SAVE10%20takes%2010%25%20off",
+    "kind": "test",
+    "declarationIndex": 0,
+    "titlePath": [
+     "SAVE10 takes 10% off"
+    ],
+    "file": "tests/discount.e2e.ts",
+    "source": {
+     "file": "tests/discount.e2e.ts",
+     "line": 4,
+     "column": 1
+    },
+    "targetId": "web",
+    "platform": "web",
+    "agent": "default",
+    "repeat": 0,
+    "tags": [],
+    "selected": true,
+    "status": "passed",
+    "attempts": [
+     {
+      "id": "01a11cc5-271c-7636-af8c-d3c58fc4776b",
+      "index": 0,
+      "status": "passed",
+      "startedAt": "2026-10-08T18:27:25.084Z",
+      "durationMs": 433,
+      "artifacts": [
+       {
+        "id": "01a11cc5-271c-7636-af8c-d3c58fc4776b:artifact:0",
+        "kind": "trace",
+        "mediaType": "application/zip",
+        "redaction": "not-required",
+        "producer": {
+         "kind": "attempt"
+        },
+        "path": "web/tests_discount.e2e.ts__SAVE10_20takes_2010_25_20off-7e2332ea/default/attempt-0/trace/trace.zip",
+        "size": 118840,
+        "sha256": "0f6a602d61247d8df1057a3fa0e00559bb4ce8c671603512b42d80df08bdc484"
+       }
+      ],
+      "secondaryErrors": [],
+      "cleanup": "complete",
+      "steps": [
+       {
+        "id": "01a11cc5-271c-7636-af8c-d3c58fc4776b:0",
+        "index": 0,
+        "kind": "app",
+        "api": "app.open",
+        "label": "/",
+        "status": "passed",
+        "startedAt": "2026-10-08T18:27:25.209Z",
+        "durationMs": 124,
+        "events": [],
+        "artifacts": [],
+        "source": {
+         "file": "node_modules/e2e/dist/run/steps.js",
+         "line": 26,
+         "column": 16
+        }
+       },
+       {
+        "id": "01a11cc5-271c-7636-af8c-d3c58fc4776b:1",
+        "index": 1,
+        "kind": "locator",
+        "api": "locator.tap",
+        "label": "getByRole(\"button\", name: \"Add Mug to cart\")",
+        "status": "passed",
+        "startedAt": "2026-10-08T18:27:25.333Z",
+        "durationMs": 93,
+        "events": [],
+        "artifacts": [],
+        "source": {
+         "file": "node_modules/e2e/dist/run/steps.js",
+         "line": 26,
+         "column": 16
+        }
+       },
+       {
+        "id": "01a11cc5-271c-7636-af8c-d3c58fc4776b:2",
+        "index": 2,
+        "kind": "locator",
+        "api": "locator.fill",
+        "label": "getByLabel(\"Discount code\")",
+        "status": "passed",
+        "startedAt": "2026-10-08T18:27:25.428Z",
+        "durationMs": 17,
+        "events": [],
+        "artifacts": [],
+        "source": {
+         "file": "node_modules/e2e/dist/run/steps.js",
+         "line": 26,
+         "column": 16
+        }
+       },
+       {
+        "id": "01a11cc5-271c-7636-af8c-d3c58fc4776b:3",
+        "index": 3,
+        "kind": "locator",
+        "api": "locator.tap",
+        "label": "getByRole(\"button\", name: \"Apply code\")",
+        "status": "passed",
+        "startedAt": "2026-10-08T18:27:25.445Z",
+        "durationMs": 44,
+        "events": [],
+        "artifacts": [],
+        "source": {
+         "file": "node_modules/e2e/dist/run/steps.js",
+         "line": 26,
+         "column": 16
+        }
+       },
+       {
+        "id": "01a11cc5-271c-7636-af8c-d3c58fc4776b:4",
+        "index": 4,
+        "kind": "assertion",
+        "api": "expect.toHaveText",
+        "label": "getByRole(\"status\", name: \"Total\")",
+        "status": "passed",
+        "startedAt": "2026-10-08T18:27:25.491Z",
+        "durationMs": 3,
+        "events": [],
+        "artifacts": [],
+        "source": {
+         "file": "node_modules/e2e/dist/run/steps.js",
+         "line": 26,
+         "column": 16
+        }
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "errors": [],
+  "summary": {
+   "discovered": 2,
+   "selected": 2,
+   "executed": 2,
+   "passed": 1,
+   "failed": 1,
+   "interrupted": 0,
+   "flaky": 0,
+   "skipped": 0
+  },
+  "limits": {
+   "maxAgentContextBytes": 16384,
+   "maxLedgerBytes": 8192,
+   "maxObservationBytes": 262144,
+   "maxEventsPerStep": 1000,
+   "maxModelTokensPerCall": 64000
+  },
+  "usage": {
+   "discoveredResults": 2,
+   "maxAgentContextBytes": 0,
+   "maxLedgerBytes": 0,
+   "maxObservationBytes": 0,
+   "artifactBytes": 315057,
+   "downloads": 0,
+   "events": 0,
+   "modelTokens": 0,
+   "maxModelCallsInStep": 0,
+   "maxActionStepsInStep": 0
+  }
+ }
+}

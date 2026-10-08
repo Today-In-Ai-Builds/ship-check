@@ -1,0 +1,26 @@
+# Screen at failure
+url: http://127.0.0.1:4321/
+revision: b1
+viewport: 1280x720
+nodes: 20
+
+#root document "Tiny Shop"
+ #n50 main
+  #n51 heading "Tiny Shop"
+  #n52 list
+   #n53 listitem "Mug $10.00 Add Mug to cart" text="Mug $10.00"
+    #n54 button "Add Mug to cart"
+   #n55 listitem "T-shirt $15.00 Add T-shirt to cart" text="T-shirt $15.00"
+    #n56 button "Add T-shirt to cart" [focused]
+   #n57 listitem "Cap $8.00 Add Cap to cart" text="Cap $8.00"
+    #n58 button "Add Cap to cart"
+  #n59 region "Cart"
+   #n60 heading "Cart"
+   #n61 list
+    #n62 listitem "Mug $10.00"
+    #n63 listitem "T-shirt $15.00"
+   #n64 text="Discount code"
+   #n65 textbox "Discount code"
+   #n66 button "Apply code"
+   #n67 text="Total:"
+    #n68 status "Total" text="$1,015.00"
