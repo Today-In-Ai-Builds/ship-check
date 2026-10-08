@@ -2,7 +2,7 @@
   "name": "ship-check",
   "version": "0.1.0",
   "private": true,
-  "description": "A pull-request gate: plain-English browser tests, a root-cause diagnosis when one fails, and a senior-engineer code review, posted as one comment.",
+  "description": "Plain-English browser tests, a root-cause diagnosis and a senior review of every pull request, in one comment.",
   "type": "module",
   "license": "MIT",
   "scripts": {
@@ -11,5 +11,17 @@
     "test": "node --test ship-check/ship-check.test.mjs",
     "ship-check": "node ship-check/ship-check.mjs"
   },
-  "devDependencies": { "e2e": "0.18.0", "@e2e-dev/web": "latest", "ai": "latest", "@ai-sdk/openai-compatible": "latest" }
+  "devDependencies": {
+    "e2e": "0.18.0",
+    "@e2e-dev/web": "latest",
+    "ai": "latest",
+    "@ai-sdk/openai-compatible": "latest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kevinasorensen-alt/ship-check"
+  },
+  "engines": {
+    "node": ">=24.8"
+  }
 }

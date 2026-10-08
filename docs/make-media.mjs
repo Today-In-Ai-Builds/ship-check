@@ -88,6 +88,11 @@ async function demoClip(browser) {
 const browser = await chromium.launch();
 await shot(browser, readFileSync(join(here, 'src', 'banner.html'), 'utf8'), 'banner.png', { width: 1280, height: 420 });
 await shot(browser, commentHtml(readFileSync('ship-check-report.md', 'utf8')), 'pr-comment.png', { width: 956, height: 400 });
+// READY_REPORT: a ship-check-report.md saved from the fix-discount-codes branch.
+if (process.env.READY_REPORT) {
+  const ready = commentHtml(readFileSync(process.env.READY_REPORT, 'utf8')).replace('Add discount codes #1', 'Fix discount codes #2');
+  await shot(browser, ready, 'pr-comment-ready.png', { width: 956, height: 300 });
+}
 await demoClip(browser);
 await browser.close();
 console.log('wrote docs/media/banner.png, pr-comment.png, demo.gif');
