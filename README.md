@@ -39,7 +39,7 @@ flowchart LR
 You need Node.js 24.8 or newer, git, and [Claude Code](https://claude.com/claude-code) signed in. The AI steps run through it, on your own plan.
 
 ```bash
-git clone https://github.com/kevinasorensen-alt/ship-check && cd ship-check
+git clone https://github.com/Today-In-Ai-Builds/ship-check && cd ship-check
 npm ci --ignore-scripts                 # nothing runs at install time
 npx playwright-core install chromium    # the browser e2e drives
 
