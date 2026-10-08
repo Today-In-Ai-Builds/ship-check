@@ -14,7 +14,18 @@ export function claudeArgs(model = process.env.SHIP_CHECK_MODEL || 'sonnet') {
           '--no-session-persistence'];         // nothing kept on disk
 }
 
+// The answer is the whole reply, or its ```json block. Only then fall back to
+// scanning, so a stray "{}" in the model's prose is never taken for the answer.
 export function firstJson(text) {
+  const whole = text.trim();
+  const fenced = whole.match(/```(?:json)?\s*\n([\s\S]*?)\n```/);
+  for (const candidate of [whole, fenced?.[1]]) {
+    if (!candidate) continue;
+    try {
+      const v = JSON.parse(candidate);
+      if (v && typeof v === 'object' && !Array.isArray(v)) return v;
+    } catch { /* not the whole answer */ }
+  }
   for (let i = text.indexOf('{'); i !== -1; i = text.indexOf('{', i + 1)) {
     for (let j = text.lastIndexOf('}'); j > i; j = text.lastIndexOf('}', j - 1)) {
       try { return JSON.parse(text.slice(i, j + 1)); } catch { /* try a shorter span */ }
@@ -32,6 +43,8 @@ export async function askClaude(prompt) {
         // (which is what disables every tool) and mangles the JSON argument.
         { cwd, maxBuffer: 16 * 1024 * 1024, timeout: 10 * 60 * 1000, shell: false },
         (err, out, errOut) => (err ? reject(new Error(`claude failed: ${err.message} ${errOut}`)) : resolve(out)));
+      // A missing or early-exiting claude errors the pipe: reject, don't crash.
+      child.stdin.on('error', (e) => reject(new Error(`claude could not be started: ${e.message}`)));
       child.stdin.end(prompt);                  // stdin, not argv: diffs are long
     });
     const envelope = JSON.parse(stdout);

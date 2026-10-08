@@ -139,3 +139,15 @@ test('a report older than this run is refused, never read as a pass', () => {
   const fresh = { run: { finishedAt: '2026-10-08T18:05:00Z', results: [] } };
   assert.deepEqual(freshFailures(fresh, started), []);
 });
+
+// --- shared fixes found by reviewing Leak Check, 2026-10-08 -------------------
+
+test('package@version commands stay copyable; @mentions are still broken', () => {
+  assert.equal(clean('run npm install lodash@latest'), 'run npm install lodash@latest');
+  assert.doesNotMatch(clean('ping @octocat'), /@octocat/);
+});
+
+test('the answer is the whole reply or its fenced block, not a stray {} in prose', () => {
+  const reply = ['Like this: {} - answer:', '```json', '{"findings":[1]}', '```'].join('\n');
+  assert.deepEqual(firstJson(reply), { findings: [1] });
+});

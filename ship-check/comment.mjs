@@ -14,7 +14,7 @@ export function clean(text) {
     .replace(/!\[([^\]]*)\]\([^)]*\)/g, '$1')         // images -> alt text
     .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')          // links -> their words
     .replace(/https?:\/\/\S+/g, '[link removed]')     // bare URLs
-    .replace(/@(?=[\w-])/g, '@​')                // break @mentions
+    .replace(/(^|[\s(])@(?=[\w-])/g, '$1@​')   // @mentions only: lodash@latest stays copyable
     .replace(/\s+/g, ' ').trim();
   return s.length > MAX_TEXT ? `${s.slice(0, MAX_TEXT)}…` : s;
 }
