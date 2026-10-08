@@ -3,12 +3,16 @@ const products = [
   { id: 'shirt', name: 'T-shirt', price: 15 },
   { id: 'cap', name: 'Cap', price: 8 },
 ];
+// The only codes the shop honours, and what each takes off.
+const codes = { SAVE10: 10 };
 const cart = [];
+let discountPercent = 0;
 
 const money = (n) => `$${n.toFixed(2)}`;
 
 function total() {
-  return cart.reduce((sum, p) => sum + p.price, 0);
+  const subtotal = cart.reduce((sum, p) => sum + p.price, 0);
+  return subtotal * (1 - discountPercent / 100);
 }
 
 function render() {
@@ -23,4 +27,11 @@ document.querySelector('#products').innerHTML = products.map((p) =>
 document.querySelector('#products').addEventListener('click', (e) => {
   const p = products.find((x) => x.id === e.target.dataset.id);
   if (p) { cart.push(p); render(); }
+});
+
+document.querySelector('#discount').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const code = document.querySelector('#code').value.trim().toUpperCase();
+  discountPercent = codes[code] ?? 0;
+  render();
 });
