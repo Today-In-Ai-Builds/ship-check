@@ -1,0 +1,15 @@
+{
+  "name": "ship-check",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A pull-request gate: plain-English browser tests, a root-cause diagnosis when one fails, and a senior-engineer code review, posted as one comment.",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "shop": "node demo-shop/server.mjs",
+    "test:e2e": "e2e run",
+    "test": "node --test ship-check/*.test.mjs",
+    "ship-check": "node ship-check/ship-check.mjs"
+  },
+  "devDependencies": { "e2e": "0.18.0", "@e2e-dev/web": "latest", "ai": "latest", "@ai-sdk/openai-compatible": "latest" }
+}

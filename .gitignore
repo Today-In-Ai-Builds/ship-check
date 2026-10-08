@@ -1,0 +1,4 @@
+node_modules/
+.e2e/
+.ship-check/
+ship-check-report.md
