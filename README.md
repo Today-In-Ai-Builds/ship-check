@@ -6,6 +6,8 @@
 2. **When a test fails, it finds out why.** [Matt Pocock's `diagnosing-bugs` skill](https://github.com/mattpocock/skills) traces the failure to the line that caused it.
 3. **It reviews the change.** [Ponytail's review](https://github.com/DietrichGebert/ponytail) reads the diff like the engineer who gets paged when it breaks: bugs, security holes, and code that should not exist.
 
+▶️ **Watch it on *Today in AI*:** [youtube.com/shorts/L60Nk_5WULY](https://youtube.com/shorts/L60Nk_5WULY)
+
 <p align="center"><img src="docs/media/demo.gif" alt="A browser adds a $10 mug and a $15 T-shirt; the total shows $1,015.00 instead of $25.00, and a discount code of SAVE-50 raises the price" width="760"></p>
 
 ## What it caught
